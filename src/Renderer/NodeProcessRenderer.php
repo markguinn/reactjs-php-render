@@ -85,13 +85,14 @@ class NodeProcessRenderer implements RendererInterface
         }
 
         $javascript[] = sprintf(
-            "console.log(%s.%s(%s(%s)));",
+            "console.log(require('react-dom/server').%s(React.createElement(require('%s'),%s)));",
             $fragmentProvider->getReact(),
             $reactFunction,
             $fragmentProvider->getComponent($componentPath),
             json_encode($props)
         );
-        
+
+        $this->log("JS=".print_r($javascript,true));
         return implode('', $javascript);
     }
 }

@@ -46,9 +46,10 @@ class React implements RendererInterface
         $containerId = $id ?: uniqid();
 
         return sprintf(
-            "<div id=\"%s\">%s</div><script>%s.renderComponent(%s(%s),document.getElementById(%s))</script>",
+            "<div id=\"%s\">%s</div><script>%s.render(%s.createElement(%s,%s),document.getElementById(%s))</script>",
             $containerId,
             $this->renderer->renderMountableComponent($componentPath, $props),
+            $this->fragmentProvider->getReactDOM(),
             $this->fragmentProvider->getReact(),
             $this->fragmentProvider->getComponent($componentPath),
             json_encode($props),

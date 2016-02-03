@@ -31,4 +31,14 @@ class SynchronousRequireProvider implements ProviderInterface
     {
         return "require('react')";
     }
+
+
+    /**
+     * Returns fragment for getting the react object
+     * @return string
+     */
+    public function getReactDOM()
+    {
+        return "require('react-dom')";
+    }
 }

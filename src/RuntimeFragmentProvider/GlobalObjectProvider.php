@@ -17,10 +17,7 @@ class GlobalObjectProvider implements ProviderInterface
      */
     public function getComponent($componentName)
     {
-        return sprintf(
-            '%s',
-            json_encode($componentName)
-        );
+        return $componentName;
     }
 
     /**
@@ -30,6 +27,15 @@ class GlobalObjectProvider implements ProviderInterface
     public function getReact()
     {
         return 'React';
+    }
+
+    /**
+     * Returns fragment for getting the react object
+     * @return string
+     */
+    public function getReactDOM()
+    {
+        return 'ReactDOM';
     }
 
     /**

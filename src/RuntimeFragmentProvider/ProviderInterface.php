@@ -6,9 +6,9 @@ interface ProviderInterface
 {
     /**
      * Returns fragment for getting a component in JavaScript
-     * 
+     *
      * E.g. require('component')
-     * 
+     *
      * @param $componentName
      * @return mixed
      */
@@ -19,4 +19,10 @@ interface ProviderInterface
      * @return string
      */
     public function getReact();
+
+    /**
+     * Returns fragment for getting the react object
+     * @return string
+     */
+    public function getReactDOM();
 }
